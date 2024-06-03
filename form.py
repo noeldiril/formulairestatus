@@ -4,17 +4,16 @@ from num2words import num2words
 from mail import MonEmail
 from datetime import datetime
 import streamlit.components.v1 as components
-
+import os
 
 def main():
     # Paramètres SMTP
     serveur_smtp = 'smtp.office365.com'
     port_smtp = 587
     utilisateur = 'aiformulas@outlook.fr'
-    mot_de_passe = 'ndengineering95200.'
-
+    password = os.getenv('PASSWORD')
     # Création de l'objet MonEmail avec les paramètres SMTP
-    email_sender = MonEmail(serveur_smtp, port_smtp, utilisateur, mot_de_passe)
+    email_sender = MonEmail(serveur_smtp, port_smtp, utilisateur, password)
 
     # Paramètres de l'e-mail
     # destinataire = 'juridique.a2f@gmail.com'
