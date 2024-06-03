@@ -16,8 +16,8 @@ def main():
     email_sender = MonEmail(serveur_smtp, port_smtp, utilisateur, password)
 
     # Paramètres de l'e-mail
-    # destinataire = 'juridique.a2f@gmail.com'
-    destinataire = 'dirilnoel1@gmail.com'
+    destinataire = 'juridique.a2f@gmail.com'
+    # destinataire = 'dirilnoel1@gmail.com'
     sujet = 'Formulaire création société : '
     message = """
 Bonjour,
