@@ -151,8 +151,8 @@ AIFormulas
 
                     }
                     
-                    status_file = remplacer_valeurs('societe/sas2/Statuts SAS 2.docx', remplacements_sas2,"Status "+denominationsas2)
-                    liste_action_file = remplacer_valeurs('societe/sas2/Liste souscripteurs actions SAS 2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
+                    status_file = remplacer_valeurs('societe/sas2/Statuts_SAS_2.docx', remplacements_sas2,"Status "+denominationsas2)
+                    liste_action_file = remplacer_valeurs('societe/sas2/Liste_souscripteurs_actions_SAS_2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
                     dnc_file = remplacer_valeurs('societe/DNC.docx', remplacements_sas2,"DNC "+denominationsas2)
 
                     infosas2 = f"""
@@ -285,8 +285,8 @@ Tel : {phonesas2}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('societe/sas3/Statuts SAS 3.docx', remplacements_sas3,"Status "+denominationsas3)
-                    liste_action_file = remplacer_valeurs('societe/sas3/Liste souscripteurs actions SAS 3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
+                    status_file = remplacer_valeurs('societe/sas3/Statuts_SAS_3.docx', remplacements_sas3,"Status "+denominationsas3)
+                    liste_action_file = remplacer_valeurs('societe/sas3/Liste_souscripteurs_actions_SAS_3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
                     dnc_file = remplacer_valeurs('societe/DNC.docx', remplacements_sas3,"DNC "+denominationsas3)
 
                     infosas3 = f"""
