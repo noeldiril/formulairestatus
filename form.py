@@ -401,8 +401,19 @@ def get_initials(prenom, nom):
     return f"{prenom[0].upper()}{nom[0].upper()}"
 
 def remplacer_valeurs(docx_file, remplacements, nomfichier):
-    doc = Document(docx_file)
+    # Vérifiez si le fichier existe
+    if not os.path.exists(docx_file):
+        st.error(f"Le fichier {docx_file} n'existe pas.")
+        return None
+    
+    # Chargement du document
+    try:
+        doc = Document(docx_file)
+    except Exception as e:
+        st.error(f"Erreur lors de l'ouverture du document : {e}")
+        return None
 
+    # Fonctions de remplacement
     def remplacer_dans_paragraph(paragraph, remplacements):
         for old_value, new_value in remplacements.items():
             if old_value in paragraph.text:
@@ -439,11 +450,14 @@ def remplacer_valeurs(docx_file, remplacements, nomfichier):
             remplacer_dans_table(table, remplacements)
 
     # Sauvegarde du nouveau document
-    new_docx_file = nomfichier + ".docx"
-    doc.save(new_docx_file)
-
-    return new_docx_file
-
+    try:
+        new_docx_file = nomfichier + ".docx"
+        doc.save(new_docx_file)
+        st.success(f"Document sauvegardé sous : {new_docx_file}")
+        return new_docx_file
+    except Exception as e:
+        st.error(f"Erreur lors de la sauvegarde du document : {e}")
+        return None
 
 
 
