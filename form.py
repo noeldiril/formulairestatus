@@ -151,9 +151,9 @@ AIFormulas
 
                     }
                     
-                    status_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sas2/Statuts SAS 2.docx', remplacements_sas2,"Status "+denominationsas2)
-                    liste_action_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sas2/Liste souscripteurs actions SAS 2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
-                    dnc_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/DNC.docx', remplacements_sas2,"DNC "+denominationsas2)
+                    status_file = remplacer_valeurs('/societe/sas2/Statuts SAS 2.docx', remplacements_sas2,"Status "+denominationsas2)
+                    liste_action_file = remplacer_valeurs('/societe/sas2/Liste souscripteurs actions SAS 2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
+                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sas2,"DNC "+denominationsas2)
 
                     infosas2 = f"""
 Nom : {nomsas2}
@@ -285,9 +285,9 @@ Tel : {phonesas2}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sas3/Statuts SAS 3.docx', remplacements_sas3,"Status "+denominationsas3)
-                    liste_action_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sas3/Liste souscripteurs actions SAS 3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
-                    dnc_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/DNC.docx', remplacements_sas3,"DNC "+denominationsas3)
+                    status_file = remplacer_valeurs('/societe/sas3/Statuts SAS 3.docx', remplacements_sas3,"Status "+denominationsas3)
+                    liste_action_file = remplacer_valeurs('/societe/sas3/Liste souscripteurs actions SAS 3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
+                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sas3,"DNC "+denominationsas3)
 
                     infosas3 = f"""
 Nom : {nomsas3}
@@ -373,9 +373,9 @@ Tel : {phonesas3}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sasu/Statuts SASU.docx', remplacements_sasu,"Status "+denominationsasu)
-                    liste_action_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/sasu/Liste souscripteurs actions SASu.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
-                    dnc_file = remplacer_valeurs('/Users/noeldiril/Desktop/Juridique/societe/DNC.docx', remplacements_sasu,"DNC "+denominationsasu)
+                    status_file = remplacer_valeurs('/societe/sasu/Statuts SASU.docx', remplacements_sasu,"Status "+denominationsasu)
+                    liste_action_file = remplacer_valeurs('/societe/sasu/Liste souscripteurs actions SASu.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
+                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sasu,"DNC "+denominationsasu)
 
                     infosasu = f"""
 Nom : {nomsasu}
