@@ -151,9 +151,9 @@ AIFormulas
 
                     }
                     
-                    status_file = remplacer_valeurs('/societe/sas2/Statuts SAS 2.docx', remplacements_sas2,"Status "+denominationsas2)
-                    liste_action_file = remplacer_valeurs('/societe/sas2/Liste souscripteurs actions SAS 2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
-                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sas2,"DNC "+denominationsas2)
+                    status_file = remplacer_valeurs('societe/sas2/Statuts SAS 2.docx', remplacements_sas2,"Status "+denominationsas2)
+                    liste_action_file = remplacer_valeurs('societe/sas2/Liste souscripteurs actions SAS 2.docx', remplacements_sas2,"Liste souscripteurs "+denominationsas2)
+                    dnc_file = remplacer_valeurs('societe/DNC.docx', remplacements_sas2,"DNC "+denominationsas2)
 
                     infosas2 = f"""
 Nom : {nomsas2}
@@ -285,9 +285,9 @@ Tel : {phonesas2}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('/societe/sas3/Statuts SAS 3.docx', remplacements_sas3,"Status "+denominationsas3)
-                    liste_action_file = remplacer_valeurs('/societe/sas3/Liste souscripteurs actions SAS 3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
-                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sas3,"DNC "+denominationsas3)
+                    status_file = remplacer_valeurs('societe/sas3/Statuts SAS 3.docx', remplacements_sas3,"Status "+denominationsas3)
+                    liste_action_file = remplacer_valeurs('societe/sas3/Liste souscripteurs actions SAS 3.docx', remplacements_sas3,"Liste souscripteurs "+denominationsas3)
+                    dnc_file = remplacer_valeurs('societe/DNC.docx', remplacements_sas3,"DNC "+denominationsas3)
 
                     infosas3 = f"""
 Nom : {nomsas3}
@@ -373,9 +373,9 @@ Tel : {phonesas3}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('/societe/sasu/Statuts_SASU.docx', remplacements_sasu,"Status "+denominationsasu)
-                    liste_action_file = remplacer_valeurs('/societe/sasu/Liste_souscripteurs_actions_SASU.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
-                    dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sasu,"DNC "+denominationsasu)
+                    status_file = remplacer_valeurs('societe/sasu/Statuts_SASU.docx', remplacements_sasu,"Status "+denominationsasu)
+                    liste_action_file = remplacer_valeurs('societe/sasu/Liste_souscripteurs_actions_SASU.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
+                    dnc_file = remplacer_valeurs('societe/DNC.docx', remplacements_sasu,"DNC "+denominationsasu)
 
                     infosasu = f"""
 Nom : {nomsasu}
@@ -401,19 +401,8 @@ def get_initials(prenom, nom):
     return f"{prenom[0].upper()}{nom[0].upper()}"
 
 def remplacer_valeurs(docx_file, remplacements, nomfichier):
-    # Vérifiez si le fichier existe
-    if not os.path.exists(docx_file):
-        st.error(f"Le fichier {docx_file} n'existe pas.")
-        return None
-    
-    # Chargement du document
-    try:
-        doc = Document(docx_file)
-    except Exception as e:
-        st.error(f"Erreur lors de l'ouverture du document : {e}")
-        return None
+    doc = Document(docx_file)
 
-    # Fonctions de remplacement
     def remplacer_dans_paragraph(paragraph, remplacements):
         for old_value, new_value in remplacements.items():
             if old_value in paragraph.text:
@@ -450,14 +439,11 @@ def remplacer_valeurs(docx_file, remplacements, nomfichier):
             remplacer_dans_table(table, remplacements)
 
     # Sauvegarde du nouveau document
-    try:
-        new_docx_file = nomfichier + ".docx"
-        doc.save(new_docx_file)
-        st.success(f"Document sauvegardé sous : {new_docx_file}")
-        return new_docx_file
-    except Exception as e:
-        st.error(f"Erreur lors de la sauvegarde du document : {e}")
-        return None
+    new_docx_file = nomfichier + ".docx"
+    doc.save(new_docx_file)
+
+    return new_docx_file
+
 
 
 
