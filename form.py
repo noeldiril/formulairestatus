@@ -373,8 +373,8 @@ Tel : {phonesas3}
                         '<DATE>' : date_aujourd_hui
                     }
                     
-                    status_file = remplacer_valeurs('/societe/sasu/Statuts SASU.docx', remplacements_sasu,"Status "+denominationsasu)
-                    liste_action_file = remplacer_valeurs('/societe/sasu/Liste souscripteurs actions SASu.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
+                    status_file = remplacer_valeurs('/societe/sasu/Statuts_SASU.docx', remplacements_sasu,"Status "+denominationsasu)
+                    liste_action_file = remplacer_valeurs('/societe/sasu/Liste_souscripteurs_actions_SASU.docx', remplacements_sasu,"Liste souscripteurs "+denominationsasu)
                     dnc_file = remplacer_valeurs('/societe/DNC.docx', remplacements_sasu,"DNC "+denominationsasu)
 
                     infosasu = f"""
